@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Rangbhumi RSCOE Ticket Booking Mini Project
 
 A Python Flask mini project to book college natak tickets with 2D seat selection and PDF ticket generation (with QR code). 
@@ -31,3 +32,6 @@ A Python Flask mini project to book college natak tickets with 2D seat selection
    python -m venv venv
    source venv/bin/activate     # Linux/Mac
    venv\Scripts\activate        # Windows
+=======
+#test deploy
+>>>>>>> 18314f3d88e58a5cd9f8fb131848a4dfb965b129
