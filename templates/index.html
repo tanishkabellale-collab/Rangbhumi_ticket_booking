@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rangbhumi RSCOE</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>RSCOE Rangabhumi</h1>
+    <p>College natak booking — pick a show & enjoy</p>
+  </header>
+
+  <main class="show-grid">
+    {% for show in shows %}
+    <div class="show-card" data-show-id="{{show.id}}">
+      <div class="curtain"></div>
+      <img src="{{show.image}}" alt="{{show.title}}">
+      <div class="show-info">
+        <h2>{{show.title}}</h2>
+        <p>{{show.description}}</p>
+        <p><strong>{{show.datetime}}</strong></p>
+        <div class="countdown" data-seconds="{{show.countdown_seconds}}">Loading...</div>
+        <a class="btn" href="/show/{{show.id}}">Book Now</a>
+      </div>
+    </div>
+    {% endfor %}
+  </main>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>

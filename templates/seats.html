@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seats - {{ show.title }}</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>{{ show.title }} — {{ show.datetime }}</h1>
+    <a href="/">← Back</a>
+  </header>
+
+  <main class="seats-page">
+    <div id="theater">
+      <div class="screen">STAGE</div>
+      <div id="seat-grid" class="seat-grid" data-rows="{{ rows }}" data-cols="{{ cols }}">
+        <!-- Seats will load here using script.js -->
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <h3>Selected Seats</h3>
+      <div id="selected-list">None</div>
+      <div id="price">Total: Rs 0</div>
+      <button id="best-seat" type="button">Suggest Best Seat</button>
+
+      <form id="book-form" method="POST" action="/book">
+        <input type="hidden" name="show_id" value="{{ show.id }}">
+        <input type="hidden" name="seats" id="seats-input">
+
+        <label>Name (optional):<br>
+          <input type="text" name="name">
+        </label>
+
+        <label>Email (optional):<br>
+          <input type="email" name="email">
+        </label>
+
+        <button type="submit">Confirm & Download Ticket (PDF)</button>
+      </form>
+    </aside>
+  </main>
+
+<script>
+  const SEATS = {};
+  const VIP_ROWS = [];
+  const NORMAL_PRICE = 100;
+  const VIP_PRICE = 200;
+</script>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
